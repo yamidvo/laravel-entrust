@@ -9,7 +9,7 @@
                 'username' => 'admin',
                 'first_name' => 'Yamid',
                 'last_name' => 'Viloria Ortega',
-                'email' => 'yamid@email.com',
+                'email' => 'admin@admin.com',
                 'password' => Hash::make('1234'),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime      
