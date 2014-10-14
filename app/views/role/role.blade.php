@@ -111,7 +111,7 @@
           <select id="select-permisos" multiple="multiple">
                 @if(isset($permisos))
                     @foreach($permisos as $permiso)
-                        <option value="{{ $permiso->id }}">{{ $permiso->name }}</option>
+                        <option value="{{ $permiso->id }}">{{ $permiso->display_name }}</option>
                     @endforeach
                 @endif
             </select>
