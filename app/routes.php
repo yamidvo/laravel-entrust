@@ -28,24 +28,3 @@ Route::resource('/roles','RolesController');
 Route::get('/permisos','PermisosController@index');
 Route::get('/permisos/asignar','PermisosController@asignar');
 Route::get('/permisos/desasignar','PermisosController@desasignar');
-
-Route::get('/crear_permisos', function()
-{
-
-    $crear_usuarios = new Permission();
-    $crear_usuarios->name = 'crear_usuarios';
-    $crear_usuarios->display_name = 'crear usuarios';
-    $crear_usuarios->save();//creamos un nuevo permiso
-    
-    $admin = new Role();
-    $admin->name = 'admin';
-    $admin->save();//creamos un nuevo rol
-
-    $admin->attachPermission($crear_usuarios);//asignamos el permiso al rol admin
-
-    $user = User::find(1);//buscamos un usuario
-
-    $user->attachRole($admin);//asignamos el rol al usuario
-    
-    return 'permisos creados';
-});
